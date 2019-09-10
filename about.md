@@ -6,8 +6,6 @@ permalink: /about/
 
 一个程序员
 
-### More Information
-
 人生不尽 学海无涯
 
 ### Contact me
