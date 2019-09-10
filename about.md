@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+一个程序员
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+人生不尽 学海无涯
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[icer.CHN@outlook.com](mailto:icer.CHN@outlook.com)
