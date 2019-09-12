@@ -8,7 +8,7 @@ title: 用Docker快乐的搭建工作环境
 
 ---
 
-我目前的工作环境就需要我安装 5.7 版本，以及 Redis，外加一个自己玩的 RabbitMQ。懒得装这些软件，以及配套的语言环境。Windows 使用 Docker 只需以下几步即可完成环境的搭建：
+我目前的工作环境就需要我安装 Mysql 5.7 版本，以及 Redis，外加一个自己玩的 RabbitMQ。懒得装这些软件，以及配套的语言环境。Windows 使用 Docker 只需以下几步即可完成环境的搭建：
 
 1. 去[Docker 官网](https://www.docker.com)注册账号，安装 Docker Desktop。
 1. 下载各个镜像：
