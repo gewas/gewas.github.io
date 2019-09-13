@@ -17,11 +17,12 @@ title: 用Docker快乐的搭建工作环境
    1. docker pull rabbitmq:management
 1. 逐个启动：
 
-   > docker run --name mysql57 --restart=always -p 3306:3306 -p 33060:33060 -e MYSQL_ROOT_PASSWORD=password -d mysql:5.7
-   >
-   > docker run --name redis --restart=always -p 6379:6379 -d redis redis-server --appendonly yes
-   >
-   > docker run --name rabbitmq --restart=always --hostname my-rabbit -p 4369:4369 -p 5671:5671 -p 5672:5672 -p 15671:15671 -p 15672:15672 -p 25672:25672 -e RABBITMQ_DEFAULT_USER=username -e RABBITMQ_DEFAULT_PASS=password -d rabbitmq:management
+   1. mysql
+      > docker run --name mysql57 --restart=always -p 3306:3306 -p 33060:33060 -e MYSQL_ROOT_PASSWORD=password -d mysql:5.7
+   2. redis
+      > docker run --name redis --restart=always -p 6379:6379 -d redis redis-server --appendonly yes
+   3. rabbitmq
+      > docker run --name rabbitmq --restart=always --hostname my-rabbit -p 4369:4369 -p 5671:5671 -p 5672:5672 -p 15671:15671 -p 15672:15672 -p 25672:25672 -e RABBITMQ_DEFAULT_USER=username -e RABBITMQ_DEFAULT_PASS=password -d rabbitmq:management
 
 1. 至此，mysql 已经在 3306 端口，redis 在 6379 端口，rabbit 在 5672 以及 15672 端口待命了。
 
