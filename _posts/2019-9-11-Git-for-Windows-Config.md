@@ -19,3 +19,7 @@ title: Git-for-windows 的一些配置
 
   - `git config --global core.autocrlf input`
   - `git config --global core.safecrlf true`
+
+- 让 git 记录冲突的解决，遇到相同问题自动解决，方便 rebase 的执行
+
+  - `git config --global rerere.enabled true`
