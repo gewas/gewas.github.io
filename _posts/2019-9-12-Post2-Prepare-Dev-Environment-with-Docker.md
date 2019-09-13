@@ -21,7 +21,6 @@ title: 用Docker快乐的搭建工作环境
 
       ```text
       docker run --name mysql57 --restart=always -p 3306:3306 -p 33060:33060 -e MYSQL_ROOT_PASSWORD=password -d mysql:5.7
-
       ```
 
    2. redis
