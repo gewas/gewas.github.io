@@ -18,9 +18,9 @@ title: 在Docker中启动CentOS 7 的注意事项
   - 最后那里的意义是设置容器的 entrypoint 到`/usr/sbin/init`，这样就可以启动 dbus 等服务，配合`--privileged`使用。
 
 - 好了，CentOS 7 启动完毕，我们装一个 nginx 试试
-
+  - `docker exec -it centos7 bash`，先使用交互式命令行客户端链接 centos7 容器并执行 bash
   - `yum update -y`，先升级一下，`-y`参数是只如果执行过程中如果有问我 yes or no 的话，自动用 yes 应答。
-  - `yum install epel-release -y`，安装 nginx 的 步骤我在[之前的文章](./Setup-nginx-on-new-installed-CentOS7)中也有整理，这里的参数`-y`同上。
+  - `yum install epel-release -y`，安装 nginx 的 步骤我在[之前的文章](../Setup-nginx-on-new-installed-CentOS7)中也有整理，这里的参数`-y`同上。
   - `yum install nginx -y`
   - `systemctl start nginx`，就是为了这个操作，我们运行 centos 容器时使用`--privileged`配合`/usr/sbin/init`。无报错运行后，nginx 正常服务。
   - 在你的电脑浏览器访问`http://127.0.0.1:20080`看看吧。
