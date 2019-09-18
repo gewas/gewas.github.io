@@ -10,3 +10,35 @@
 [0918/100504:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
 [0918/100504:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
 [0918/103807:INFO:exception_record.cc(518)] [QB]Process ID: 22320 Type: 4
+[0918/121125:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0918/121130:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0918/152046:INFO:exception_record.cc(518)] [QB]Process ID: 22156 Type: 2
+[0918/152047:INFO:exception_record.cc(518)] [QB]Process ID: 25292 Type: 2
+[0918/164948:INFO:exception_record.cc(518)] [QB]Process ID: 13120 Type: 2
+[0918/164959:INFO:exception_record.cc(518)] [QB]Process ID: 9852 Type: 2
+[0918/165004:FATAL:memory.cc(19)] Out of memory. size=4194304
+Backtrace:
+	CLInfo [0x55288707+224151]
+	cef_time_to_timet [0x55250AB1+695729]
+	TerminateProcessWithoutDump [0x571E1B51+9231921]
+	GetHandleVerifier [0x5662A14D+20577341]
+	GetHandleVerifier [0x56629DC7+20576439]
+	TerminateProcessWithoutDump [0x5748881E+12012286]
+	TerminateProcessWithoutDump [0x57487A32+12008722]
+	TerminateProcessWithoutDump [0x574877C8+12008104]
+	TerminateProcessWithoutDump [0x57489A6F+12016975]
+	GetHandleVerifier [0x565A4D64+20031572]
+	GetHandleVerifier [0x565A4C4E+20031294]
+	GetHandleVerifier [0x565A4C7F+20031343]
+	CLInfo [0x552661D2+83554]
+	BaseThreadInitThunk [0x76B76359+25]
+	RtlGetAppContainerNamedObjectPath [0x77DE7B74+228]
+	RtlGetAppContainerNamedObjectPath [0x77DE7B44+180]
+
+[0918/165009:INFO:exception_record.cc(518)] [QB]Process ID: 1568 Type: 2
+[0918/204132:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0918/204134:INFO:exception_record.cc(518)] [QB]Process ID: 15624 Type: 4
+[0918/204137:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0918/204138:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0918/204138:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0918/204142:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
