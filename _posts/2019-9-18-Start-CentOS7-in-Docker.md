@@ -19,10 +19,19 @@ title: 在Docker中启动CentOS 7 的注意事项
 
 - 好了，CentOS 7 启动完毕，我们装一个 nginx 试试
   - `docker exec -it centos7 bash`，先使用交互式命令行客户端链接 centos7 容器并执行 bash
-  - `yum update -y`，先升级一下，`-y`参数是只如果执行过程中如果有问我 yes or no 的话，自动用 yes 应答。
+  - `yum upgrade -y`，先升级一下，`-y`参数是只如果执行过程中如果有问我 yes or no 的话，自动用 yes 应答。
   - `yum install epel-release -y`，安装 nginx 的 步骤我在[之前的文章](../Setup-nginx-on-new-installed-CentOS7)中也有整理，这里的参数`-y`同上。
   - `yum install nginx -y`
   - `systemctl start nginx`，就是为了这个操作，我们运行 centos 容器时使用`--privileged`配合`/usr/sbin/init`。无报错运行后，nginx 正常服务。
   - 在你的电脑浏览器访问`http://127.0.0.1:20080`看看吧。
+
+**注意**：`yum upgrade`与`yum update`的区别：
+
+- upgrade，只升级所有包，不升级软件和系统内核
+- update，升级所有包同时也升级软件和系统内核
+
+所以不要轻易执行`yum update`，除非你有十分的把握或者无所畏惧。
+
+---
 
 **Fantastic Docker！**

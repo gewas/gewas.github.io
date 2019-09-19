@@ -42,3 +42,12 @@ Backtrace:
 [0918/204138:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
 [0918/204138:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
 [0918/204142:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0919/001055:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0919/031055:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0919/031056:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0919/031100:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0919/031101:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0919/093631:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0919/093634:INFO:exception_record.cc(518)] [QB]Process ID: 4540 Type: 4
+[0919/094738:INFO:exception_record.cc(518)] [QB]Process ID: 9500 Type: 2
+[0919/094814:INFO:exception_record.cc(518)] [QB]Process ID: 1208 Type: 2
