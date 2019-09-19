@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 我用docker的centos7容器中都做了啥？
+title: 我在 Docker 的 Centos 7 容器中都做了啥？
 ---
 
 单纯的操作记录，目标是做一个启动即用的公司项目镜像。  
