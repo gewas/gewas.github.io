@@ -15,6 +15,7 @@ title: 用Docker快乐的搭建工作环境
    1. docker pull mysql:5.7
    1. docker pull redis
    1. docker pull rabbitmq:management
+   1. docker pull wordpress
 1. 逐个启动：
 
    1. mysql
@@ -23,18 +24,28 @@ title: 用Docker快乐的搭建工作环境
       docker run --name mysql57 --restart=always -p 3306:3306 -p 33060:33060 -e MYSQL_ROOT_PASSWORD=password -d mysql:5.7
       ```
 
-   2. redis
+   1. redis
 
       ```text
-      docker run --name redis --restart=always -p 6379:6379 -d redis redis-server --appendonly yes
+      docker run --name redis --restart=always -p 6379:6379 -d redis redis-server --requirepass password --appendonly yes
       ```
 
-   3. rabbitmq
+      1. 如果不想用启动参数设置密码等配置，可以使用`docker exec -it redis bash` 进入 redis 容器并打开 bash，执行`redis-cli` 进入 redis 客户端。`config get appendonly` 可以查看 appendonly 参数设置的值，`config set requirepass password` 可以设置 password 为密码。
+
+   1. rabbitmq
 
       ```text
       docker run --name rabbitmq --restart=always --hostname my-rabbit -p 4369:4369 -p 5671:5671 -p 5672:5672 -p 15671:15671 -p 15672:15672 -p 25672:25672 -e RABBITMQ_DEFAULT_USER=username -e RABBITMQ_DEFAULT_PASS=password -d rabbitmq:management
       ```
 
-1. 至此，mysql 已经在 3306 端口，redis 在 6379 端口，rabbit 在 5672 以及 15672 端口待命了。
+   1. wordpress
+
+      ```text
+      docker run --name wordpress --restart=always -p 10080:80 --link mysql57:mysql -d wordpress
+      ```
+
+1. 至此，mysql 已经在 3306 端口，redis 在 6379 端口，rabbit 在 5672 以及 15672 端口待命了。顺便还加装了一个 wordpress 来记录工作的技术点滴。
+
+**注意**：使用上面的带参数的启动方式，会把密码等信息暴露，必须在安全环境或无所谓的环境下使用。比如，可以使用`docker inspect redis`命令，看到 redis 的明文密码。
 
 [Docker Hub](https://hub.docker.com)还有很多镜像等着你去探索，自己也可以制作镜像分享给他人使用。

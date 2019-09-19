@@ -25,7 +25,7 @@ title: 在Docker中启动CentOS 7 的注意事项
   - `systemctl start nginx`，就是为了这个操作，我们运行 centos 容器时使用`--privileged`配合`/usr/sbin/init`。无报错运行后，nginx 正常服务。
   - 在你的电脑浏览器访问`http://127.0.0.1:20080`看看吧。
 
-**注意**：`yum upgrade`与`yum update`的区别：
+**注意**：`yum upgrade` 与 `yum update` 的区别：
 
 - upgrade，只升级所有包，不升级软件和系统内核
 - update，升级所有包同时也升级软件和系统内核
