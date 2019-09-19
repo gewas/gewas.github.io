@@ -9,7 +9,7 @@ title: 在Docker中启动CentOS 7 的注意事项
 
 - 首先下载 CentOS 7 的官方镜像：`docker pull centos:7`
 
-- 然后就可以运行它了，先执行命令：`docker run --privileged -p 20022:22 -p 20080:80 -p 20443:443 -p 28080:8080 --name=centos7 -itd centos:7 /usr/sbin/init`
+- 然后就可以运行它了，先执行命令：`docker run --privileged --restart=always -p 20022:22 -p 20080:80 -p 20443:443 -p 28080:8080 --name=centos7 -itd centos:7 /usr/sbin/init`
 
   - 我们使用`--privileged`配合`/usr/sbin/init`是为了防止在使用`systemctl`命令时报`Failed to get D-Bus connection: Operation not permitted`错误（这个错误十分常见，如果你只用 docker run -it centos:7 命令来启动的话。这也是我以前的使用困惑，因为并不是很懂 Linux）。
 
