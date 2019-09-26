@@ -15,13 +15,14 @@ title: 我在 Docker 的 Centos 7 容器中都做了啥？
 
 进入容器：
 
-- yum upgrade -y
-- yum install epel-release -y
-- yum install nginx -y
-- systemctl start nginx
-- curl 127.0.0.1
-- systemctl enable nginx
-- reboot
+- `chmod 755 /etc/rc.d/rc.local`
+- `yum upgrade -y`
+- `yum install epel-release -y`
+- `yum install nginx -y`
+- `systemctl start nginx`
+- `curl localhost`
+- `systemctl enable nginx`
+- `reboot`
 
 退出容器
 
@@ -36,6 +37,10 @@ title: 我在 Docker 的 Centos 7 容器中都做了啥？
 
 进入容器：
 
--
+- `yum -y install wget`
+- `wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm`
+- `rpm -ivh mysql-community-release-el7-5.noarch.rpm`
+- `yum install mysql-server`
 
 ---
+未完待续...
