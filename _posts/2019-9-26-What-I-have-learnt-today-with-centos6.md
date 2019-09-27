@@ -279,3 +279,88 @@ title: 今天在 CentOS 6 上部署时学到的...
 
 6. 验证 ntp 服务  
    `watch ntpq -p`
+
+### 查看已安装的 mysql mariaDB
+
+`rpm -qa | grep mysql`
+
+`rpm -qa | grep mariadb`
+
+也可以使用 yum：
+
+`yum list installed | grep <软件关键字>`
+
+### 卸载已安装的 mysql mariaDB
+
+`rpm -e --nodeps <软件名>`
+
+`yum -y remove mysql-*`
+
+说明：`*`是通配符
+
+### rpm 安装 mysql
+
+必须安装以下组件：common, libs, libs-compat, client, server
+
+```text
+
+// 防止出现依赖包冲突
+yum install -y libaio
+yum install -y perl
+yum install -y numactl
+
+// 安装mysql包
+rpm -ivh ./temp/mysql-community-common-5.7.17-1.el6.x86_64.rpm
+rpm -ivh ./temp/mysql-community-libs-5.7.17-1.el6.x86_64.rpm
+rpm -ivh ./temp/mysql-community-libs-compat-5.7.17-1.el6.x86_64.rpm
+rpm -ivh ./temp/mysql-community-client-5.7.17-1.el6.x86_64.rpm
+rpm -ivh ./temp/mysql-community-server-5.7.17-1.el6.x86_64.rpm
+
+// 为各个节点添加connector的jar包依赖
+scp bigdataSoftware/mysql/mysql-connector-java.jar root@master:/usr/share/java/mysql-connector-java.jar
+```
+
+### 配置 mysql
+
+详细的配置说明可以上网查找：
+
+`vi /etc/my.cnf`
+
+启动 mysql 服务：
+
+`service mysqld start`
+
+查看 mysql 生成的密码：
+
+`cat mysql/logs/mysqld.log |grep password`
+
+使用 mysql client 接入：
+
+`mysql -uroot -p`
+
+密码就是刚刚查出来的那个，进入后修改密码，退出，测试：
+
+```text
+mysql> SET PASSWORD = PASSWORD('mypasswd123');
+mysql> exit
+mysql -u root -p c
+// 这一句是为了让任何主机都能用root配合密码使用mysql
+mysql> grant all on *.* to 'root'@'%' identified by 'mypasswd123';
+mysql> flush privileges;
+mysql> exit
+```
+
+mysql 开机自启动：
+
+`chkconfig mysqld on`
+
+### 查看服务启动配置
+
+查看所有的：
+
+`chkconfig --list`
+
+查看指定的：
+
+`chkconfig --list | grep mysql`
+
