@@ -23,6 +23,10 @@ title: 今天在 CentOS 6 上部署时学到的...
 
 `passwd 用户名`
 
+### 修改 hostname
+
+`vi /etc/sysconfig/network`
+
 ### 修改 hosts
 
 `vi /etc/hosts`
@@ -52,6 +56,10 @@ title: 今天在 CentOS 6 上部署时学到的...
 ### tar 解压至指定文件夹中
 
 `tar -zxvf ./jdk-8u211-linux-x64.tar.gz -C /usr/lib/java/`
+
+### unzip 解压至指定目录中
+
+`unzip xxx.zip -d /myDir/`
 
 ### 下载 sh 脚本并执行
 
@@ -364,3 +372,18 @@ mysql 开机自启动：
 
 `chkconfig --list | grep mysql`
 
+### 安装当前目录中的所有.rpm
+
+`yum -y install *.rpm`
+
+### 循环执行指令
+
+将本机的 /etc/xxx 文件，拷贝到 slave1 ~ slave6 主机的相同位置：
+
+`for i in {1..6};do scp -r /etc/xxx slave$i:/etc/xxx;done`
+
+### 快速去到 JAVA_HOME 目录
+
+感受一下环境变量：
+
+`cd $JAVA_HOME`
