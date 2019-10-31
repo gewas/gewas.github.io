@@ -146,4 +146,24 @@ title: 学习《10天搞定Linux基础到Java项目部署》
   - ~ 代表当前用户的 home 目录
   - ~username 代表 username 用户的 home 目录
 
+## PATH
 
+PATH 环境变量，在 Linux 中 PATH 的分隔符是`:`
+
+- 查看当前 PATH
+  - echo \$PATH
+- 修改当前 PATH，增加一个目录`/usr/java`
+  - PATH=\$PATH":/usr/java"
+
+## 查看文件内容
+
+- cat：由第一行开始显示文件内容
+- tac：从最后一行开始显示，tac 与 cat 正好相反
+- nl：显示的时候，输出行号
+- more：分页显示内容
+- less：同 more，但是还可以用方向键向前翻页
+- head：只看头几行
+- tail：只看尾几行
+  - tail -f：保持跟踪打印文件的最后几行，该操作通常用于看日志
+- od：以二进制方式读取文件内容
+- strings：打印文件中能打印的字符内容
