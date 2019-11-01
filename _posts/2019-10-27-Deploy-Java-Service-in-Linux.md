@@ -28,6 +28,9 @@ title: 学习《10天搞定Linux基础到Java项目部署》
 - passwd username  
   为 username 用户设置密码
 
+- userdel -r username  
+  完全删除 username 用户
+
 ## 切换用户
 
 - su 或者 su root  
@@ -167,3 +170,30 @@ PATH 环境变量，在 Linux 中 PATH 的分隔符是`:`
   - tail -f：保持跟踪打印文件的最后几行，该操作通常用于看日志
 - od：以二进制方式读取文件内容
 - strings：打印文件中能打印的字符内容
+
+## umask
+
+当我们通过 touch 或 mkdir 产生新文件（夹）时，会默认配置权限：
+
+- 文件：666
+- 文件夹：777
+
+但是默认下实际操作情况为：
+
+- 文件：644
+- 文件夹：755
+
+就是因为 umask 会过滤一道，可以使用`umask`或`umask -S`查看当前设置的 umask 值。
+
+`umask 000`，可以设置为 umask 不过滤，但是通常不推荐修改。
+
+## 隐藏权限
+
+`chattr [+-] <attr> 文件或目录`
+
+- `chattr +a d1`，给 d1 目录添加 append 权限，使 d1 目录中只能添加不能删除，多用于日志
+- `chattr +i f2`，设定 f2 文件不能被删除、改名、设定链接关系，同时不能写入或新增内容
+
+## 查看文件类型
+
+使用`file 文件`命令来查看文件类型。
