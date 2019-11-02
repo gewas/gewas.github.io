@@ -197,3 +197,62 @@ PATH 环境变量，在 Linux 中 PATH 的分隔符是`:`
 ## 查看文件类型
 
 使用`file 文件`命令来查看文件类型。
+
+## 高级创建用户
+
+`useradd [-g <主组>] [-G <附加组1,附加组2...>] [-r] <用户名>`
+
+-g 指定用户所属主组  
+-G 指定用户所属附加组  
+-r 等效于--system ，创建一个系统用户
+
+注：默认不会给系统用户创建 home 目录
+
+## 用户相关命令
+
+- id 显示当前用户信息
+- passwd 修改当前用户的密码
+  - 普通用户修改密码会受到密码强度检测限制
+  - root 可以给其他用户修改密码，可无视密码强度限制
+- whoami 查看自己
+- groups 查看所属组
+
+## 用户信息
+
+查看用户信息：`cat /etc/passwd`
+
+用户密码信息：`cat /etc/shadow`
+
+## passwd 高级使用
+
+改命令还可以：
+
+- `passwd -l <username>` 锁定用户
+- `passwd -u <username>` 解锁用户
+- `passwd -d <username>` 使该用户能够无密码使用
+
+## sudo
+
+直接使用 root 用户做所有操作是很不安全的，通常都会新建专有用户去做不同的工作。但是经常又需要高权限去做一些操作，不可能总`su`来`su`去。**sudo**命令就是来临时使用 root 权限去执行命令。
+
+必要操作：将用户添加到`/etc/sudoers`文件中，才能使用户能够使用 sudo
+
+## 组操作
+
+- 添加组：`groupadd <groupName>`
+
+  - /etc/group 中存放着组信息
+
+- 删除组：`groupdel <groupName>`
+
+## 修改用户组
+
+`usermod [-g <主组>] [-G <附加组1,附加组2...>] <用户名>`
+
+## 搜索指令位置
+
+搜索 ls 在哪里：`which ls`
+
+搜索 uname 在哪里：`which uname`
+
+## 
