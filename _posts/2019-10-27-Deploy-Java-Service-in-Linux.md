@@ -255,4 +255,39 @@ PATH 环境变量，在 Linux 中 PATH 的分隔符是`:`
 
 搜索 uname 在哪里：`which uname`
 
-## 
+## 查找文件
+
+命令：`find <查找位置> <查找参数>`
+
+示例：
+
+- `find . -name "s*"` 在当前目录模糊查找名字以 s 开头的文件
+- `find / -iname "java*" -user root` 在根目录查找，大小写不敏感且名字以 java 开头且所有者是 root 的文件
+
+参数：
+
+- -name 文件名
+- -iname 文件名大小写不敏感
+- -user 所属用户
+- -group 所属组
+- -or 或条件
+
+## 查找内容 grep
+
+grep, Global Regular Expression Print
+
+命令：`grep [options] pattern file`
+
+参数：
+
+- -n 显示行号
+- -i 忽略大小写
+- -w 单词完整匹配
+
+示例：
+
+- 从文件中查找关键字：`grep 'linux' target.txt`
+- 找出以 u 开头的行：`grep ^u test.txt`
+- 找出以 hat 结尾的行：`grep hat$ article.txt`
+
+注：如果正则表达式中含有空格，一定要用引号将正则表达式部分包起来
