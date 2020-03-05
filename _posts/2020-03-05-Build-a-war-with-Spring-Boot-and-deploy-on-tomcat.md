@@ -29,7 +29,7 @@ title: 使用SpringBoot打war包的注意事项并在Tomcat部署
         </dependency>
   ```
 
-* 添加servlet-api依赖，因为代码中会用到但是上一步中去调了api 与 tomcat实现，这里要加回来 api
+* 添加servlet-api依赖，因为代码中会用到但是上一步中去掉了servlet的api与tomcat的实现，这里要加回来 api
   
   ```xml
         <dependency>
@@ -40,7 +40,7 @@ title: 使用SpringBoot打war包的注意事项并在Tomcat部署
         </dependency>
   ```
 
-* 添加 war plugin，其中 failOnMissingWebXml 的设置可以避免没有web.xml时报错
+* 添加 war plugin，其中 failOnMissingWebXml 的设置可以避免没有web.xml时的报错
   
   ```xml
             <plugin>
