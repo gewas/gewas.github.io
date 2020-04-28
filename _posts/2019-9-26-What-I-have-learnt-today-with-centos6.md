@@ -216,11 +216,11 @@ title: 今天在 CentOS 6 上部署时学到的...
    #statistics clockstats cryptostats loopstats peerstats
    ```
 
-4. master 上配置`vim /etc/ntp.conf`
+4. slave 上配置`vim /etc/ntp.conf`
 
    ```text
    # For more information about this file, see the man pages
-   # ntp.conf(5), ntp_acc(5), ntp_auth(5), ntp_clock(5), ntp_misc      (5), ntp_mon(5).
+   # ntp.conf(5), ntp_acc(5), ntp_auth(5), ntp_clock(5), ntp_misc(5), ntp_mon(5).
 
    driftfile /var/lib/ntp/drift
 
