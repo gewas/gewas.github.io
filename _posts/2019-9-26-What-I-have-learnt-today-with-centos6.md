@@ -188,7 +188,7 @@ title: 今天在 CentOS 6 上部署时学到的...
    # and when no outside source of synchronized time is available.
    # 外部时间服务器不可用时，以本地时间作为时间服务
    server  127.127.1.0
-   Fudge   127.127.1.0 stratum 10
+   fudge   127.127.1.0 stratum 10
 
    #broadcastclient                        # broadcast client
    #broadcast 224.0.1.1 autokey            # multicast server
